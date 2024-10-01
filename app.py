@@ -1,7 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title("ChatGPT Plus DALL-E")
 
