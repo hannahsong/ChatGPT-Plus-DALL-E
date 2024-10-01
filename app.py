@@ -31,7 +31,7 @@ if submit and user_input:
     st.write(prompt)
 
     with st.spinner("Waiting for DALL-E..."):
-        dalle_response = openai.Image.create(
+        dalle_response = OpenAI.Image.create(
             prompt=prompt,
             size=size
         )
