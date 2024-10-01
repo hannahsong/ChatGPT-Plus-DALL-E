@@ -1,7 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 
-OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.title("ChatGPT Plus DALL-E")
 
@@ -22,7 +22,7 @@ if submit and user_input:
     })
 
     with st.spinner("Waiting for ChatGPT..."):
-        gpt_response = client.chat.completions.create(
+        gpt_response = openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=gpt_prompt
         )
@@ -31,7 +31,7 @@ if submit and user_input:
     st.write(prompt)
 
     with st.spinner("Waiting for DALL-E..."):
-        dalle_response = OpenAI.Image.create(
+        dalle_response = openai.Image.create(
             prompt=prompt,
             size=size
         )
